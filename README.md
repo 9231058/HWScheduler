@@ -10,3 +10,6 @@ As a result, hardware solutions are frequently
 avoided. However, if the hardware scheduler is configurable
 to support several scheduling algorithms, then the
 hardware solutions become more flexible.
+## Contributers
+* Parham Alvani
+* Farzan Dehbashi
