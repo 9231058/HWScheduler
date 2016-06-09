@@ -9,7 +9,8 @@ use IEEE.std_logic_1164.all;
 
 entity queue is
 	port (index : in std_logic_vector;
-		remove, mode, clk : in std_logic);
+		remove, mode, clk : in std_logic;
+		tid);
 end entity;
 
 architecture rtl of queue is
@@ -29,11 +30,19 @@ architecture rtl of queue is
 	signal empty : std_logic_vector (cells_nr downto 0);
 	signal removes : std_logic_vector (cells_nr - 1 downto 0);
 	signal tids : queue_data (cells_nr downto 0);
+	signal mux : std_logic;
 
 	for all:sr_cell use entity sr_cell;
 begin
 	for I in 0 to cells_nr generate
 		cells : sr_cell port map(open, open, tids(I + 1), tids(I), clk,
-			removes(I), empty(I + 1), empty(I), mode);
+			removes(I), empty(I + 1), empty(I), mux);
 	end generate
+	process (clk)
+	begin
+		if clk'event and clk = '1' then
+			mux <= mode;
+			tid <= tids (to_integer(unsigned(index));
+		end if;
+	end process;
 end architecture;
