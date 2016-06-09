@@ -34,7 +34,7 @@ architecture rtl of queue is
 	signal new_datas : queue_data (cells_nr - 1 downto 0);
 	signal mux : std_logic;
 
-	for all:sr_cell use entity sr_cell;
+	for all:sr_cell use entity work.sr_cell;
 begin
 	empty (cells_nr) <= '0';
 	for I in 0 to cells_nr - 1 generate
