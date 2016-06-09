@@ -18,6 +18,7 @@ end entity;
 
 architecture rtl of sr_cell is
 	signal reg_tid : std_logic_vector (N - 1 downto 0);
+	signal reg_new_data : std_logic_vector (N - 1 downto 0);
 begin
 	tid <= reg_tid;
 	process (clk)
@@ -27,24 +28,26 @@ begin
 				case mux_data is
 					when '0' =>
 						empty <= '1';
-						reg_tid <= left_data;
+						reg_new_data <= left_data;
 					when '1' =>
 						empty <= '1';
-						reg_tid <= new_data;
+						reg_new_data <= new_data;
 				end case;
 			else
 				empty <= '0';
+				reg_tid <= reg_new_data;
 			end if;
 			if next_empty = '1' then
 				case mux_data is
 					when '0' =>
 						empty <= '1';
-						reg_tid <= left_data;
+						reg_new_data <= left_data;
 					when '1' =>
 						empty <= '1';
-						reg_tid <= right_data;
+						reg_new_data <= right_data;
 				end case;
 			else
+				reg_tid <= reg_new_data;
 				empty <= '0';
 			end if;
 		end if;
