@@ -29,25 +29,28 @@ architecture rtl of queue is
 
 	constant cells_nr : integer := 2 ** index'length;
 
-	signal empty : std_logic_vector (cells_nr downto 0);
-	signal removes : std_logic_vector (cells_nr - 1 downto 0);
-	signal tids : queue_data (cells_nr downto 0);
-	signal new_datas : queue_data (cells_nr - 1 downto 0);
+	signal empty : std_logic_vector (cells_nr + 1 downto 1);
+	signal removes : std_logic_vector (cells_nr downto 1);
+	signal tids : queue_data (cells_nr + 1 downto 0);
+	signal new_datas : queue_data (cells_nr downto 1);
 	signal mux : std_logic;
 
 	for all:sr_cell use entity work.sr_cell;
 begin
-	empty (cells_nr) <= '0';
-	for I in 0 to cells_nr - 1 generate
-		cells : sr_cell port map(open, new_datas (I), tids (I + 1), tids (I), clk,
+	empty (cells_nr + 1) <= '0';
+	tids (cells_nr + 1) <= (others => '0');
+	tids (0) <= (others => '0');
+
+	for I in 1 to cells_nr generate
+		cells : sr_cell port map(tids (I - 1), new_datas (I), tids (I + 1), tids (I), clk,
 			removes (I), empty (I + 1), empty (I), mux);
 	end generate
 	process (clk)
 	begin
 		if clk'event and clk = '1' then
 			mux <= mode;
-			tid <= tids (to_integer(unsigned(index));
-			new_datas (to_integer(unsigned(index))) <= new_data;
+			tid <= tids (to_integer(unsigned(index) + 1);
+			new_datas (to_integer(unsigned(index)) + 1) <= new_data;
 		end if;
 	end process;
 end architecture;
