@@ -53,6 +53,18 @@ begin
 				next_state <= EQ1;
 			when EQ1 =>
 				next_state <= EQ2;
+			when EQ2 =>
+				next_state <= EQ3;
+			when EQ3 =>
+				if tid_reg <= tid then
+					next_state <= EQ4;
+				elsif inx_reg = (others => '1') then
+					next_state <= EQ4;
+				else
+					next_state <= EQ1;
+				end if;
+			when EQ4 =>
+				next_state <= RST;
 		end case;
 	end process;
 	process (current_state)
@@ -80,8 +92,21 @@ begin
 				counter_enable <= '1';
 				inx_reg <= counter_index;
 			when EQ2 =>
+				index <= inx_reg;
+				remove <= '0';
+				mode <= '0';
 				counter_reset <= '0';
 				counter_enable <= '0';
+			when EQ3 =>
+				index <= (others => '0');
+				remove <= '0';
+				mode <= '0';
+				counter_reset <= '0';
+				counter_enable <= '0';
+			when EQ4 =>
+				index <= inx_reg;
+				remove <= '1';
+				mode <= '1';
 		end case;
 	end process;
 end;
