@@ -6,6 +6,7 @@
 --------------------------------------------------------------------------------
 library IEEE;
 use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
 
 entity queue is
 	port (index : in std_logic_vector;
