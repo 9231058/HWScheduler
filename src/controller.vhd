@@ -13,12 +13,12 @@ entity controller is
 		clk, reset : in std_logic;
 		remove, mode : out std_logic;
 		index : out std_logic_vector (N - 1 downto 0);
-		data_in : in std_logic_vector (15 downto 0);
-		data_out : out std_logic_vector (15 downto 0));
+		data_in, tid_in : in std_logic_vector (15 downto 0);
+		data_out, tid_out : out std_logic_vector (15 downto 0));
 end entity;
 
 architecture rtl of controller is
-	type state is (RST, EQ0, EQ1, DQ0);
+	type state is (RST, EQ0, EQ1, DQ0, DQ1);
 	signal current_state, next_state : state := RST;
 begin
 	process (clk)
@@ -41,6 +41,8 @@ begin
 					next_state <= RST;
 				end if;
 			when DQ0 =>
+				next_state <= DQ1;
+			when DQ1 =>
 				next_state <= RST;
 		end case;
 	end process;
@@ -53,6 +55,11 @@ begin
 				mode <= '0';
 			when DQ0 =>
 				index <= (others <= '1');
+				remove <= '0';
+				mode <= '0';
+			when DQ1 =>
+				index <= (others <= '1');
+				data_out <= tid_in;
 				remove <= '1';
 				mode <= '0';
 		end case;
