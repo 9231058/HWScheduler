@@ -8,7 +8,7 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 
 entity sr_cell is
-	generic (N : integer := 16)
+	generic (N : integer := 16);
 	port (left_data, new_data, right_data : in std_logic_vector (N - 1 downto 0);
 		tid : out std_logic_vector (N - 1 downto 0);
 		clk, remove, next_empty : in std_logic;
@@ -32,6 +32,8 @@ begin
 					when '1' =>
 						empty <= '1';
 						reg_new_data <= new_data;
+					when others =>
+						empty <= '0';
 				end case;
 			else
 				empty <= '0';
@@ -45,6 +47,8 @@ begin
 					when '1' =>
 						empty <= '1';
 						reg_new_data <= right_data;
+					when others =>
+						empty <= '0';
 				end case;
 			else
 				reg_tid <= reg_new_data;
