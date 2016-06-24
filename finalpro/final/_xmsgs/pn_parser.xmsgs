@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated   -->
+<!--     by the Xilinx ISE software.  Any direct editing or        -->
+<!--     changes made to this file may result in unpredictable     -->
+<!--     behavior or data corruption.  It is strongly advised that -->
+<!--     users do not edit the contents of this file.              -->
+<!--                                                               -->
+<!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
+
+<messages>
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/Farzan/Desktop/finalpro/final/controller.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">C:/Users/Farzan/Desktop/finalpro/final/controller.vhd</arg>&quot; Line <arg fmt="%d" index="2">58</arg>. <arg fmt="%s" index="3">Syntax error near &quot;process&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">C:/Users/Farzan/Desktop/finalpro/final/controller.vhd</arg>&quot; Line <arg fmt="%d" index="2">60</arg>. <arg fmt="%s" index="3">Syntax error near &quot;begin&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">C:/Users/Farzan/Desktop/finalpro/final/controller.vhd</arg>&quot; Line <arg fmt="%d" index="2">91</arg>. <arg fmt="%s" index="3">Syntax error near &quot;process&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">C:/Users/Farzan/Desktop/finalpro/final/controller.vhd</arg>&quot; Line <arg fmt="%d" index="2">93</arg>. <arg fmt="%s" index="3">Syntax error near &quot;begin&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">C:/Users/Farzan/Desktop/finalpro/final/controller.vhd</arg>&quot; Line <arg fmt="%d" index="2">96</arg>. <arg fmt="%s" index="3">Syntax error near &quot;&lt;=&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">C:/Users/Farzan/Desktop/finalpro/final/controller.vhd</arg>&quot; Line <arg fmt="%d" index="2">100</arg>. <arg fmt="%s" index="3">Syntax error near &quot;&lt;=&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">C:/Users/Farzan/Desktop/finalpro/final/controller.vhd</arg>&quot; Line <arg fmt="%d" index="2">104</arg>. <arg fmt="%s" index="3">Syntax error near &quot;&lt;=&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">C:/Users/Farzan/Desktop/finalpro/final/controller.vhd</arg>&quot; Line <arg fmt="%d" index="2">133</arg>. <arg fmt="%s" index="3">Syntax error near &quot;process&quot;.</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/Farzan/Desktop/finalpro/final/queue.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">C:/Users/Farzan/Desktop/finalpro/final/queue.vhd</arg>&quot; Line <arg fmt="%d" index="2">34</arg>. <arg fmt="%s" index="3">Syntax error near &quot;port&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">C:/Users/Farzan/Desktop/finalpro/final/queue.vhd</arg>&quot; Line <arg fmt="%d" index="2">57</arg>. <arg fmt="%s" index="3">Syntax error near &quot;for&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">C:/Users/Farzan/Desktop/finalpro/final/queue.vhd</arg>&quot; Line <arg fmt="%d" index="2">60</arg>. <arg fmt="%s" index="3">Syntax error near &quot;generate&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">C:/Users/Farzan/Desktop/finalpro/final/queue.vhd</arg>&quot; Line <arg fmt="%d" index="2">65</arg>. <arg fmt="%s" index="3">Syntax error near &quot;;&quot;.</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/Farzan/Desktop/finalpro/final/sr_cell.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">C:/Users/Farzan/Desktop/finalpro/final/sr_cell.vhd</arg>&quot; Line <arg fmt="%d" index="2">25</arg>. <arg fmt="%s" index="3">Syntax error near &quot;port&quot;.</arg>
+</msg>
+
+</messages>
+
