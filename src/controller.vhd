@@ -20,11 +20,13 @@ entity controller is
 end entity;
 
 architecture rtl of controller is
-	type state is (RST, EQ0, EQ1, DQ0, DQ1);
+	type state is (RST, EQ0, EQ1, EQ2, EQ3, EQ4, DQ0, DQ1);
 	signal current_state, next_state : state := RST;
 
 	signal tid_reg : std_logic_vector (15 downto 0);
 	signal inx_reg : std_logic_vector (N - 1 downto 0);
+
+	constant inx_all_one : std_logic_vector (N - 1 downto 0) := (others => '1');
 begin
 	process (clk)
 	begin
@@ -33,6 +35,8 @@ begin
 				current_state <= RST;
 			else
 				current_state <= next_state;
+			end if;
+		end if;
 	end process;
 	process (current_state, enqueue, dequeue)
 	begin
@@ -56,9 +60,9 @@ begin
 			when EQ2 =>
 				next_state <= EQ3;
 			when EQ3 =>
-				if tid_reg <= tid then
+				if tid_reg <= tid_in then
 					next_state <= EQ4;
-				elsif inx_reg = (others => '1') then
+				elsif inx_reg = inx_all_one then
 					next_state <= EQ4;
 				else
 					next_state <= EQ1;
@@ -71,15 +75,15 @@ begin
 	begin
 		case current_state is
 			when RST =>
-				index <= (others <= '0');
+				index <= (others => '0');
 				remove <= '0';
 				mode <= '0';
 			when DQ0 =>
-				index <= (others <= '1');
+				index <= (others => '1');
 				remove <= '0';
 				mode <= '0';
 			when DQ1 =>
-				index <= (others <= '1');
+				index <= (others => '1');
 				data_out <= tid_in;
 				remove <= '1';
 				mode <= '0';
